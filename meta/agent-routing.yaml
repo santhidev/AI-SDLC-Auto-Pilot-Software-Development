@@ -1,7 +1,0 @@
-roles:
-  product_owner: ["PROMPT-1"]
-  reviewer: ["PROMPT-2"]
-  impact_analysis: ["PROMPT-3"]
-  factory: ["PROMPT-4"]
-  quality_gate: ["PROMPT-5"]
-  evidence_collector: ["PROMPT-E"]

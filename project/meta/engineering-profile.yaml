@@ -1,0 +1,14 @@
+engineering:
+  architecture:
+    style: "clean"
+    module_boundary: "feature"
+  testing:
+    approach: "tdd"
+    pyramid:
+      unit: "high"
+      integration: "medium"
+      e2e: "critical-only"
+  quality:
+    linting: true
+    formatting: true
+    static_analysis: true

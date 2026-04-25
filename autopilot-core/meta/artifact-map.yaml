@@ -1,0 +1,35 @@
+# Artifact Map (Core Contract)
+# Paths are relative to repository root.
+
+phases:
+  discovery:
+    required:
+      - project/requirement.md
+      - project/meta/sdlc-state.json
+      - project/meta/project-profile.yaml
+      - project/meta/engineering-profile.yaml
+      - project/meta/design-profile.yaml
+      - project/01-discovery/00-vision.md
+
+  requirements:
+    required:
+      - project/03-requirements/11-SRS.md
+      - project/03-requirements/12-NFR.md
+      - project/03-requirements/14-acceptance-criteria.md
+      - project/ui/IA.md
+      - project/ui/user-flows.md
+      - project/ui/component-inventory.md
+      - project/ui/ux-acceptance.md
+      - project/meta/traceability.md
+
+  build:
+    required:
+      - project/04-domain/23-state-machines.md
+      - project/05-architecture/32-api-contracts.md
+      - project/08-testing/70-test-strategy.md
+      - project/evidence/00-index.md
+
+  release:
+    required:
+      - project/09-release/80-release-checklist.md
+      - project/evidence/release-approval.md

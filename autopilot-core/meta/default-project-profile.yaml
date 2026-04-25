@@ -1,0 +1,19 @@
+project:
+  mode: "no-ask"
+  compliance_profile: "enterprise-global"
+
+platform:
+  targets: ["web", "mobile", "desktop"]
+
+stack:
+  backend:
+    kind: "custom"
+    framework: "nestjs"
+    database: "postgres"
+  web:
+    framework: "nextjs"
+    ui_library: "mui"
+  mobile:
+    framework: "flutter"
+  desktop:
+    framework: "tauri"

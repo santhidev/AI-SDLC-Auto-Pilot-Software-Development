@@ -1,0 +1,17 @@
+# Quality Gates (Core Contract)
+
+requirements:
+  - check: traceability
+    rule: "Every FR in project/03-requirements/11-SRS.md must map to at least one acceptance criterion and at least one test in project/meta/traceability.md"
+
+ui:
+  - check: ui_visible
+    rule: "If UI targets exist, provide Web Storybook or screenshot packs per design-profile policy"
+
+security:
+  - check: scans
+    rule: "Dependency scan + secret scan + SAST + SBOM must be referenced in project/evidence/security-report.md"
+
+release:
+  - check: evidence
+    rule: "project/evidence/00-index.md and project/evidence/release-approval.md must exist and contain links"
