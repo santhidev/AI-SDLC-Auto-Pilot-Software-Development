@@ -1,5 +1,12 @@
 # Design References
 
 ## Rules
-- Repo/asset must have explicit license permitting reuse.
-- Record URL, license, and scope (inspiration vs code-reuse).
+- Reference sources must have explicit license if reused.
+- Record URL, license, and scope.
+
+## Template
+- Ref-001:
+  - URL:
+  - License:
+  - Scope: inspiration | code-reuse
+  - Notes:

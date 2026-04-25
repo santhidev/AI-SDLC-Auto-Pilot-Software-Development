@@ -1,19 +1,21 @@
 project:
   name: "<auto-from-requirement>"
   mode: "no-ask"                 # no-ask | wizard
-  compliance_profile: "enterprise-global"  # max
-  privacy_regime: "pdpa"          # default
+  compliance_profile: "enterprise-global"
+  privacy_regime: "pdpa"          # default; can extend to gdpr
 
 platform:
   targets: ["web", "mobile", "desktop"]
 
 stack:
   backend:
-    preset: "ts"
-    framework: "nestjs"
+    kind: "saas-or-custom"         # saas-or-custom
+    custom:
+      framework: "nestjs"
+      language: "typescript"
     database: "postgres"
     cache: "redis"
-    messaging: "rabbitmq"
+    queue: "rabbitmq"
 
   web:
     framework: "nextjs"
@@ -21,7 +23,6 @@ stack:
 
   mobile:
     framework: "flutter"
-    variant: "<none>"
 
   desktop:
     framework: "tauri"

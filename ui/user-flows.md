@@ -1,5 +1,7 @@
 # User Flows
 
-## Critical Flows
+## EN
+List critical flows and error flows.
 
-## Error/Edge Flows
+## TH
+ระบุ flow หลักและ error/edge flow

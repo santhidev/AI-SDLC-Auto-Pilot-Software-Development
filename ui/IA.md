@@ -1,5 +1,7 @@
 # Information Architecture (IA)
 
-## Sitemap
+## EN
+Describe sitemap and navigation.
 
-## Navigation
+## TH
+อธิบาย sitemap และโครงนำทาง

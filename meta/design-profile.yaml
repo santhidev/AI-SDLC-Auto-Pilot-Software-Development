@@ -5,6 +5,8 @@ design:
     tokens:
       primary_color: "#2563EB"
       radius: 12
+      spacing_scale: 4
+      typography: "inter"
 
   preview:
     web: "storybook"
@@ -14,3 +16,6 @@ design:
   visual_regression:
     enabled: true
     baseline_policy: "approve-baseline"
+
+  references:
+    require_license_record: true

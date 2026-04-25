@@ -1,9 +1,17 @@
-# Quality Gates — Omni Global
+# Quality Gates — Ultimate
 
-bootstrap:
-  - check: mode_no_ask
-    rule: "meta/sdlc-state.json.mode must be no-ask before build"
+requirements:
+  - check: traceability
+    rule: "Every FR must map to at least one acceptance criteria and at least one test"
 
-profiles:
-  - check: profiles_exist
-    rule: "meta/project-profile.yaml, meta/engineering-profile.yaml, meta/design-profile.yaml exist"
+ui:
+  - check: ui_visible
+    rule: "Web must produce Storybook; Mobile/Desktop must produce screenshot packs"
+
+security:
+  - check: scans
+    rule: "Dependency scan + secret scan + SAST + SBOM referenced in evidence/security-report.md"
+
+release:
+  - check: evidence
+    rule: "evidence index + release approval must exist"

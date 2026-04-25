@@ -1,58 +1,97 @@
-# AI SDLC AutoPilot — Ultimate (TH/EN) | ระบบ AutoPilot แบบครบถ้วน
+# AI SDLC AutoPilot — Ultimate (TH/EN)
 
-**EN:** A file-driven AI SDLC AutoPilot that builds end-to-end software with **Web + Mobile + Desktop**, **enterprise-quality gates**, **visible UI previews**, and **auditable evidence packs**.  
-**TH:** ระบบ AI SDLC AutoPilot ที่ขับเคลื่อนด้วยไฟล์ สร้างซอฟต์แวร์แบบ end-to-end รองรับ **Web + Mobile + Desktop** พร้อม **quality gates**, **UI preview ที่มองเห็นได้**, และ **evidence pack** สำหรับงานองค์กร
+**EN:** A file-driven AI SDLC AutoPilot that builds end-to-end software with **Web + Mobile + Desktop**, enforced by **Quality Gates**, with **visible UI previews** and **auditable evidence packs**.
+
+**TH:** ระบบ AI SDLC AutoPilot ที่ขับเคลื่อนด้วยไฟล์ สร้างซอฟต์แวร์แบบ end-to-end รองรับ **Web + Mobile + Desktop** โดยบังคับใช้ **Quality Gates**, มี **UI preview ให้เห็นจริง**, และมี **Evidence Pack** สำหรับตรวจสอบ/อนุมัติ release
+
+> Build: 2026-04-25 09:42:29
 
 ---
 
-## TL;DR / สรุปสั้นๆ
+## TL;DR
 
-### Quick Start (No‑Ask) / เริ่มแบบไม่ต้องถาม
-1) แก้ `requirement.md`  
-2) รัน **PROMPT‑1** → สร้าง artifacts (Discovery→Requirements)  
-3) รัน **PROMPT‑2** → ทำให้ “นิ่ง/consistent/testable”  
-4) รัน **PROMPT‑4** → build ระบบ + tests + UI preview + evidence  
+### Quick Start (No‑Ask)
+1) Edit `requirement.md`
+2) Run `prompts/PROMPT-1-sdlc-autopilot.txt`
+3) Run `prompts/PROMPT-2-rewrite-loop.txt` until stable
+4) Run `prompts/PROMPT-4-one-shot-build.txt`
 
-### When requirements change / เมื่อ requirement เปลี่ยน
-รัน **PROMPT‑3 → PROMPT‑2 → PROMPT‑4**
-
-> Repo นี้ตั้งค่าเริ่มต้นเป็น **No‑Ask** เพื่อไม่ให้คุณต้องตอบคำถามซ้ำ ๆ แต่ยังมี Wizard ไว้ “ถ้าคุณอยาก override ค่า default” เท่านั้น
+### When requirements change
+Run: `PROMPT-3 → PROMPT-2 → PROMPT-4`
 
 ---
 
 ## What is this? / นี่คืออะไร?
 
-**EN:** This repository is an **AI SDLC AutoPilot**. It is designed so that any AI agent (or human) can continue work **from the latest state** without relying on chat history.  
-**TH:** Repo นี้คือ **AI SDLC AutoPilot** ที่ออกแบบให้ AI agent หรือมนุษย์สามารถ “เริ่มต่อจากสถานะล่าสุด” ได้ทันที โดยไม่พึ่งความจำแชท
+**EN:** This repository is an SDLC “autopilot” where **files are the only source of truth**. Any AI agent can resume from the latest state by reading `meta/sdlc-state.json`.
 
-**Core rule / กติกาหลัก:**  
-- **File = Source of Truth** (ไฟล์คือความจริงเดียว)  
-- **No artifact → cannot proceed** (ไม่มีไฟล์ผลลัพธ์ของขั้นนั้น → ห้ามไปขั้นถัดไป)  
-- **Completion is gate-based** (คำว่า “เสร็จ” ถูกตัดสินด้วย Quality Gates ไม่ใช่ความรู้สึก)
+**TH:** Repo นี้คือระบบ “AutoPilot” สำหรับ SDLC ที่ยึดหลักว่า **ไฟล์คือความจริงเดียว** AI agent ตัวไหนเข้ามาก็เริ่มต่อจากสถานะล่าสุดได้ โดยอ่าน `meta/sdlc-state.json`
 
 ---
 
-## Key Ideas / แนวคิดหลัก (ต้องเข้าใจ 5 อย่างนี้)
+## Core Principles / หลักการ
 
-1) **State Machine SDLC**  
-   - ไฟล์ `meta/sdlc-state.json` บอกว่า “ตอนนี้อยู่ phase ไหน” และ “ควรทำอะไรต่อ”
-
-2) **Profiles = Deterministic Decisions**  
-   - `meta/project-profile.yaml` : platform/stack/deploy/privacy/security/perf defaults  
-   - `meta/engineering-profile.yaml` : TDD/architecture/testing/scans  
-   - `meta/design-profile.yaml` : design system/tokens/preview/visual regression
-
-3) **Artifact Contract**  
-   - `meta/artifact-map.yaml` ระบุว่า phase ไหน “ต้องมีไฟล์อะไร” ถึงจะถือว่าผ่าน
-
-4) **Quality Gates**  
-   - `meta/quality-gates.yaml` ระบุ PASS/FAIL แบบ objective (traceability, tests, evidence, UI preview)
-
-5) **UI MUST be visible**  
-   - Web: **Storybook + screenshots**  
-   - Mobile/Desktop: **Screenshot packs**  
-   - ถ้าไม่มี preview artifacts → ยังไม่ถือว่าเสร็จ
+1) **File = Source of Truth** (ไม่พึ่งความจำแชท)
+2) **State-machine SDLC** (`meta/sdlc-state.json` บอก phase)
+3) **Profiles lock decisions** (project/engineering/design)
+4) **Artifact Contract** (`meta/artifact-map.yaml`)
+5) **Quality Gates** decide PASS/FAIL (`meta/quality-gates.yaml`)
+6) **UI must be visible** (Web: Storybook, Mobile/Desktop: screenshot packs)
+7) **Evidence pack required** for releases (`/evidence`)
 
 ---
 
-## Repository Structure / โครงสร้าง Repo
+## Repository Map / โครงสร้าง
+
+```
+/
+  requirement.md
+  /meta/...
+  /docs/...
+  /ui/...
+  /compliance/ /security/ /ops/ /evidence/
+  /integrations/
+  /prompts/
+  /src/
+```
+
+---
+
+## Start from Latest State (Agent Checklist)
+
+1) Read `meta/sdlc-state.json`
+2) Read profiles:
+   - `meta/project-profile.yaml`
+   - `meta/engineering-profile.yaml`
+   - `meta/design-profile.yaml`
+3) Read:
+   - `meta/quality-gates.yaml`
+   - `meta/artifact-map.yaml`
+4) Continue by phase:
+   - discovery/requirements → generate/repair artifacts (PROMPT‑1/2)
+   - build → implement code/tests/previews/evidence (PROMPT‑4)
+   - release → evidence approval (PROMPT‑E/PROMPT‑5)
+
+---
+
+## Prompts / คำสั่ง
+
+- **PROMPT‑1** Generate SDLC artifacts
+- **PROMPT‑2** Consistency reviewer (minimal rewrite)
+- **PROMPT‑3** Impact analysis (rewrite only impacted)
+- **PROMPT‑4** One-shot build (code + tests + previews + evidence)
+- **PROMPT‑5** Quality gate enforcer (PASS/FAIL)
+- **PROMPT‑E** Evidence collector (release approval)
+- **PROMPT‑0W** Optional wizard (override defaults)
+
+---
+
+## Change & Bug workflow
+
+- `changes/CR-*.md` for feature changes
+- `incidents/BUG-*.md` for bugs (add regression test first)
+
+---
+
+## License
+MIT (see `LICENSE`).
