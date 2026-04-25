@@ -1,31 +1,20 @@
 engineering:
   architecture:
-    style: "clean"                 # clean | hexagonal | layered | mvc | modular-monolith
-    module_boundary: "feature"     # feature | layer
-    dependency_rule: "inward"
+    style: "clean"
+    module_boundary: "feature"
 
   testing:
-    approach: "tdd"                # tdd | bdd | test-after
+    approach: "tdd"
     pyramid:
       unit: "high"
       integration: "medium"
       e2e: "critical-only"
-    gates:
-      flaky_retries: 2
-      e2e_must_pass_runs: 3
 
   ui_build:
-    strategy: "component-first"    # component-first | page-first
+    strategy: "component-first"
 
   quality:
-    linting: true
-    formatting: true
-    static_analysis: true
     dependency_scan: true
     secret_scan: true
     sast: true
     sbom: true
-
-  release:
-    require_evidence_pack: true
-    require_ui_preview: true

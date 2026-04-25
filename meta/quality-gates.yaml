@@ -1,29 +1,9 @@
-# Quality Gates — Ultimate (Enterprise + UI Visible)
+# Quality Gates — Omni Global
 
 bootstrap:
+  - check: mode_no_ask
+    rule: "meta/sdlc-state.json.mode must be no-ask before build"
+
+profiles:
   - check: profiles_exist
     rule: "meta/project-profile.yaml, meta/engineering-profile.yaml, meta/design-profile.yaml exist"
-
-requirements:
-  - check: fr_have_acceptance
-    rule: "Every FR in 03-requirements/11-SRS.md must have at least one Given/When/Then in 03-requirements/14-acceptance-criteria.md"
-  - check: nfr_measurable
-    rule: "Every NFR must specify a measurable target and a verification method"
-
-ui:
-  - check: ui_spec_present
-    rule: "ui/component-inventory.md and ui/ux-acceptance.md exist"
-  - check: ui_preview_present
-    rule: "Build must produce UI preview artifacts (web: Storybook; mobile/desktop: screenshot packs)"
-
-security:
-  - check: scans_required
-    rule: "Dependency scan + secret scan + SAST + SBOM must be produced and referenced in evidence/security-report.md"
-
-privacy:
-  - check: privacy_pack_present
-    rule: "Compliance pack present and evidence/privacy-report.md is populated"
-
-release:
-  - check: evidence_complete
-    rule: "evidence/00-index.md and evidence/release-approval.md exist and link to reports"

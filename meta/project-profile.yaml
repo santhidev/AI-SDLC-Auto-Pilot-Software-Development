@@ -1,8 +1,8 @@
 project:
   name: "<auto-from-requirement>"
   mode: "no-ask"                 # no-ask | wizard
-  compliance_profile: "enterprise-global"  # max: enterprise packs enabled
-  privacy_regime: "pdpa"          # default; extend to gdpr via compliance add-ons
+  compliance_profile: "enterprise-global"  # max
+  privacy_regime: "pdpa"          # default
 
 platform:
   targets: ["web", "mobile", "desktop"]
@@ -20,44 +20,11 @@ stack:
     ui_library: "mui"
 
   mobile:
-    framework: "flutter"          # override via wizard if preferred
+    framework: "flutter"
     variant: "<none>"
 
   desktop:
-    framework: "tauri"            # desktop wrapper of web ui
-
-integration:
-  payments:
-    mode: "pluggable"             # manual-slip | gateway | pluggable
-    gateway: "<none>"
-  notifications:
-    email: true
-    sms: false
-    push: true
-
-security:
-  auth:
-    method: "jwt-rbac"
-    mfa_admin: true
-  secrets:
-    management: "env"             # env | vault
-
-privacy:
-  pii_present: true
-  consent_required: true
-  log_redaction: true
-  anonymize_before_llm: true
-  data_residency: "th"
-
-performance:
-  targets:
-    api_p95_read_ms: 500
-    api_p95_write_ms: 1200
-
-observability:
-  structured_logs: true
-  metrics: true
-  tracing: true
+    framework: "tauri"
 
 deployment:
   hosting: "vps"

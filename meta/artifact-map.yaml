@@ -1,4 +1,4 @@
-# Artifact Map — Ultimate
+# Artifact Map — Omni Global
 
 phases:
   bootstrap:
@@ -8,38 +8,3 @@ phases:
       - meta/project-profile.yaml
       - meta/engineering-profile.yaml
       - meta/design-profile.yaml
-
-  ui:
-    required:
-      - ui/IA.md
-      - ui/user-flows.md
-      - ui/component-inventory.md
-      - ui/ux-acceptance.md
-      - ui/design-references.md
-
-  enterprise:
-    required:
-      - compliance/data-classification.md
-      - compliance/privacy-impact-assessment.md
-      - compliance/retention-policy.md
-      - security/threat-model.md
-      - ops/slo-sla.md
-      - evidence/00-index.md
-
-  requirements:
-    required:
-      - 01-discovery/00-vision.md
-      - 03-requirements/11-SRS.md
-      - 03-requirements/12-NFR.md
-      - 03-requirements/14-acceptance-criteria.md
-
-  build:
-    required:
-      - 04-domain/23-state-machines.md
-      - 05-architecture/32-api-contracts.md
-      - 08-testing/70-test-strategy.md
-
-  release:
-    required:
-      - 09-release/80-release-checklist.md
-      - evidence/release-approval.md
