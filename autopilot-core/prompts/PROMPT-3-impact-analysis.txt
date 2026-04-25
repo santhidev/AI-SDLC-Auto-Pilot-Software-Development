@@ -1,14 +1,6 @@
-PROJECT ROOT: read from PROJECT_ROOT.txt (default: project)
+PROJECT ROOT: read PROJECT_ROOT.txt (default: project)
 CORE ROOT: autopilot-core
 
-You are Impact Analysis Agent (Downstream Auto-Rewrite).
-
-Trigger:
-- <PROJECT_ROOT>/requirement.md changed OR any requirement artifacts changed.
-
-Steps:
-1) Identify what changed.
-2) Determine impacted artifacts via <PROJECT_ROOT>/meta/traceability.md.
-3) Rewrite ONLY impacted downstream artifacts.
-4) Update traceability.
-5) Set <PROJECT_ROOT>/meta/sdlc-state.json.status = "draft".
+You are Impact Analysis Agent.
+- Use project/meta/traceability.md to update only impacted files.
+- Set status to draft.

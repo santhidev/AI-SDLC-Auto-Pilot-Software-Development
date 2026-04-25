@@ -1,14 +1,17 @@
 # AI SDLC AutoPilot (Minimal) — Core + Single Project
 
-This repository is intentionally **minimal** and split into two parts:
+This repo is intentionally **minimal** and split into:
 
-- **AutoPilot Core (engine, prompts, gates, templates):** `autopilot-core/`
-- **Project Workspace (requirements, artifacts, code):** `project/`
+- **AutoPilot Core (engine, prompts, contracts, stack catalog):** `autopilot-core/`
+- **Project Workspace (single project requirements, artifacts, code):** `project/`
 
-## Start here
-Open: `autopilot-core/START-HERE.md`
+## Start
+1) Read `autopilot-core/START-HERE.md`
+2) Then read the single-file manual: `autopilot-core/MANUAL.md`
 
-## Project root
-The single project lives in: `project/`
+## Stack selection
+- Default stack: `autopilot-core/stacks/default.stackref`
+- Project-selected stack: `project/meta/stack.selected.stackref` (optional)
+- Overrides: `project/meta/stack.overrides.yaml` (optional)
 
-Build: 2026-04-25 14:32:11
+Build: 2026-04-25 17:24:23

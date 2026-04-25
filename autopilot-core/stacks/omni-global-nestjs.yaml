@@ -1,0 +1,71 @@
+id: omni-global-nestjs
+name: "Legacy Default (NestJS + Next.js + Flutter + Tauri)"
+version: "1.0.0"
+updated: "2026-04-25"
+tags: [nestjs, nextjs, postgres, redis, rabbitmq, flutter, tauri, mui]
+
+profiles:
+  project_profile:
+    project:
+      mode: "no-ask"
+      compliance_profile: "enterprise-global"
+    platform:
+      targets: ["web", "mobile", "desktop"]
+    stack:
+      backend:
+        kind: "custom"
+        framework: "nestjs"
+        language: "typescript"
+        runtime: "node>=20"
+        database: "postgres"
+        cache: "redis"
+        queue: "rabbitmq"
+      web:
+        framework: "nextjs"
+        ui_library: "mui"
+      mobile:
+        framework: "flutter"
+      desktop:
+        framework: "tauri"
+      deployment:
+        hosting: "vps"
+        container: true
+        orchestration: "docker-compose"
+        environments: [dev, staging, prod]
+
+  engineering_profile:
+    engineering:
+      architecture:
+        style: "clean"
+        module_boundary: "feature"
+      testing:
+        approach: "tdd"
+        pyramid:
+          unit: "high"
+          integration: "medium"
+          e2e: "critical-only"
+      quality:
+        linting: true
+        formatting: true
+        static_analysis: true
+        dependency_scan: true
+        secret_scan: true
+        sast: true
+        sbom: true
+
+  design_profile:
+    design:
+      system:
+        base: "material"
+        theme_mode: "system"
+      preview:
+        web: "storybook"
+        mobile: "screenshots-only"
+        desktop: "screenshots-only"
+      visual_regression:
+        enabled: true
+        baseline_policy: "approve-baseline"
+
+constraints:
+  notes:
+    - "This represents the previous default stack."

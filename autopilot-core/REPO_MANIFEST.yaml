@@ -3,33 +3,20 @@ repo:
   core_root: "autopilot-core"
   project_root: "project"
 
+docs:
+  manual: "autopilot-core/MANUAL.md"
+  start_here: "autopilot-core/START-HERE.md"
+
 source_of_truth:
   core:
     - autopilot-core/meta/quality-gates.yaml
     - autopilot-core/meta/artifact-map.yaml
+    - autopilot-core/stacks/default.stackref
+    - autopilot-core/stacks/*.yaml
     - autopilot-core/prompts/*
   project:
     - project/meta/sdlc-state.json
-    - project/meta/project-profile.yaml
-    - project/meta/engineering-profile.yaml
-    - project/meta/design-profile.yaml
+    - project/meta/stack.selected.stackref
+    - project/meta/stack.overrides.yaml
+    - project/meta/*-profile.yaml
     - project/meta/traceability.md
-
-run_orders:
-  new_project: ["PROMPT-1", "PROMPT-2", "PROMPT-4"]
-  requirements_change: ["PROMPT-3", "PROMPT-2", "PROMPT-4"]
-
-paths:
-  requirements:
-    - project/requirement.md
-    - project/03-requirements/*
-  decisions:
-    - project/05-architecture/34-adr/*
-  ui_specs:
-    - project/ui/*
-  enterprise:
-    - project/compliance/*
-    - project/security/*
-    - project/ops/*
-    - project/evidence/*
-    - project/integrations/*

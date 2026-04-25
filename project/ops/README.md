@@ -1,3 +1,0 @@
-# Ops
-
-SLO/alerts/runbooks.
