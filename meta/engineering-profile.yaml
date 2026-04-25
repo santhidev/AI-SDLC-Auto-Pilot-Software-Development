@@ -10,6 +10,15 @@ engineering:
       unit: "high"
       integration: "medium"
       e2e: "critical-only"
+    tools:
+      unit: "xunit"
+      mocking: "nsubstitute"
+      integration: "webapplicationfactory"
+      container: "testcontainers"
+      blazor_component: "bunit"
+      maui_ui: "manual"
+      avalonia_ui: "avalonia-automation"
+      realtime_e2e: "testserver-hubconnection"
     gates:
       e2e_must_pass_runs: 3
       flaky_retries: 2

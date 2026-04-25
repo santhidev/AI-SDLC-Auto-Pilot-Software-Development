@@ -1,31 +1,47 @@
 project:
   name: "<auto-from-requirement>"
-  mode: "no-ask"                 # no-ask | wizard
+  mode: "no-ask" # no-ask | wizard
   compliance_profile: "enterprise-global"
-  privacy_regime: "pdpa"          # default; can extend to gdpr
+  privacy_regime: "pdpa" # default; can extend to gdpr
 
 platform:
   targets: ["web", "mobile", "desktop"]
 
 stack:
   backend:
-    kind: "saas-or-custom"         # saas-or-custom
+    kind: "saas-or-custom" # saas-or-custom
     custom:
-      framework: "nestjs"
-      language: "typescript"
+      framework: ".NET 9"
+      language: "C#"
+      api_gateway: "yarp"
+      realtime: "signalr"
+      apis: "minimal-apis"
     database: "postgres"
     cache: "redis"
-    queue: "rabbitmq"
+    queue: "redis-pubsub"
+    orm: "entity-framework-core"
+    logging: "seq"
 
   web:
-    framework: "nextjs"
-    ui_library: "mui"
+    framework: "blazor-webassembly"
+    pwa: true
+    state_management: "fluxor"
+    realtime: "signalr-client"
+    ui_library: "tailwind-css"
 
   mobile:
-    framework: "flutter"
+    framework: ".net-maui"
+    mvvm: "communitytoolkit-mvvm"
+    realtime: "signalr-client"
+    ui_library: "material-3"
+    storage: "sqlite"
 
   desktop:
-    framework: "tauri"
+    framework: "avalonia-ui"
+    mvvm: "reactiveui"
+    theme: "fluent"
+    renderer: "skia"
+    realtime: "signalr-client"
 
 deployment:
   hosting: "vps"

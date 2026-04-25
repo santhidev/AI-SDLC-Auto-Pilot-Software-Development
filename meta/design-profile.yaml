@@ -1,12 +1,42 @@
 design:
   system:
-    base: "material"
-    theme_mode: "system"
-    tokens:
-      primary_color: "#2563EB"
-      radius: 12
-      spacing_scale: 4
-      typography: "inter"
+    base: "design-tokens"
+    token_file: "design-tokens.json"
+    generator: "console-app"
+    theme_mode: "platform-specific"
+
+  tokens:
+    color:
+      primary: "#FF6B35"
+      secondary: "#2EC4B6"
+    typography:
+      font_family: "Inter"
+      base_size: 16
+    spacing:
+      unit: 4
+      scale: [0, 4, 8, 12, 16, 24, 32]
+    border_radius:
+      sm: 4
+      md: 8
+      lg: 12
+
+  ui_libraries:
+    web: "tailwind-css"
+    mobile: "material-3"
+    desktop: "fluent"
+
+  token_generator:
+    enabled: true
+    outputs:
+      - platform: "web"
+        format: "css-custom-properties"
+        path: "WebApp/wwwroot/css/variables.css"
+      - platform: "mobile"
+        format: "csharp-class"
+        path: "MobileApp/Resources/Styles/DesignTokens.cs"
+      - platform: "desktop"
+        format: "xaml"
+        path: "DesktopApp/Styles/AvaloniaResources.xaml"
 
   preview:
     web: "storybook"
