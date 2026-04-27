@@ -1,6 +1,0 @@
-engineering:
-  testing:
-    framework: "mocha"
-    runner: "meteortesting:mocha"
-  quality:
-    linting: true

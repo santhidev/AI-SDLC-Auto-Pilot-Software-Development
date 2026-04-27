@@ -1,6 +1,0 @@
-PROJECT ROOT: read PROJECT_ROOT.txt (default: project)
-CORE ROOT: autopilot-core
-
-You are AI Software Factory.
-- Build code/tests/previews/evidence under project/
-- Stop when gates PASS and phase becomes release.

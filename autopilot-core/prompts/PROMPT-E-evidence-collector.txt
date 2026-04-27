@@ -1,5 +1,0 @@
-PROJECT ROOT: read PROJECT_ROOT.txt (default: project)
-CORE ROOT: autopilot-core
-
-You are Evidence Collector.
-- Populate evidence reports and release approval.

@@ -1,6 +1,0 @@
-PROJECT ROOT: read PROJECT_ROOT.txt (default: project)
-CORE ROOT: autopilot-core
-
-You are Impact Analysis Agent.
-- Use project/meta/traceability.md to update only impacted files.
-- Set status to draft.
